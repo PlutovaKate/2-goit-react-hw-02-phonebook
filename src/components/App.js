@@ -4,6 +4,7 @@ import { Component } from 'react';
 import PhonebookForm from './PhonebookForm/PhonebookForm';
 import FilterBar from './FilterBar/FilterBar';
 import ContactList from './ContactList/ContactList';
+import { Container } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -44,7 +45,7 @@ export class App extends Component {
         : contact.name.toLowerCase().includes(this.state.filter.toLowerCase())
     );
     return (
-      <div>
+      <Container>
         <h1>Phonebook</h1>
         <PhonebookForm onAdd={this.addContact} />
 
@@ -54,7 +55,7 @@ export class App extends Component {
           onChangeFilter={this.changeFilter}
         />
         <ContactList contacts={visibleContact} onDelete={this.deleteContact} />
-      </div>
+      </Container>
     );
   }
 }

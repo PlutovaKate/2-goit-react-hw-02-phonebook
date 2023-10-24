@@ -1,5 +1,15 @@
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
+import {
+  StyledForm,
+  ErrorMsg,
+  LabelWrapper,
+  LabelForm,
+  StyledField,
+  AddContactBtn,
+} from './PhoneBookForm.styled';
+
+import { HiOutlineUser, HiOutlinePhone } from 'react-icons/hi';
 
 const FormSchema = Yup.object().shape({
   name: Yup.string().min(2, 'Too Short!').required('This field is required!'),
@@ -19,26 +29,31 @@ const PhonebookForm = ({ onAdd }) => {
         actions.resetForm();
       }}
     >
-      <Form>
-        <label>
+      <StyledForm>
+        <LabelWrapper>
           Name
-          <Field name="name" placeholder="Type the NAME" />
-          <ErrorMessage name="name" />
-        </label>
+          <LabelForm>
+            <HiOutlineUser />
+            <StyledField name="name" placeholder="Type the NAME" />
+          </LabelForm>
+          <ErrorMsg name="name" component="p" />
+        </LabelWrapper>
 
-        <label>
+        <LabelWrapper>
           Number
-          <Field type="number" name="number" placeholder="Type the NUMBER" />
-          <ErrorMessage name="number" />
-        </label>
+          <LabelForm>
+            <HiOutlinePhone />
+            <StyledField
+              type="number"
+              name="number"
+              placeholder="Type the NUMBER"
+            />
+          </LabelForm>
+          <ErrorMsg name="number" component="p" />
+        </LabelWrapper>
 
-        <button type="submit">Add contact</button>
-
-        {/* <label>
-          Filter
-          <Field name="filter" placeholder="Find contacts by name" />
-        </label> */}
-      </Form>
+        <AddContactBtn type="submit">Add contact</AddContactBtn>
+      </StyledForm>
     </Formik>
   );
 };

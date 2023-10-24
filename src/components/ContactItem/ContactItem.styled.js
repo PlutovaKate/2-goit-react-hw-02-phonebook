@@ -6,12 +6,18 @@ export const ListItem = styled.li`
   gap: 20px;
   justify-content: space-between;
   width: 300px;
+  align-items: center;
 `;
 
 export const ContactInform = styled.div`
   display: flex;
   gap: 10px;
   width: 100%;
+  align-items: center;
+  svg {
+    color: green;
+    font-size: large;
+  }
 `;
 
 export const ContactBtn = styled.button`
@@ -22,4 +28,25 @@ export const ContactBtn = styled.button`
   border-radius: 5px;
   padding: 2px;
   cursor: pointer;
+`;
+
+export const BtnWrapper = styled.div`
+  :hover {
+    background-color: #8d9093;
+    color: white;
+    border: none;
+  }
+`;
+
+export const Info = styled.p`
+  font-weight: ${props => {
+    switch (props.type) {
+      case 'name':
+        return 'bolder';
+      case 'number':
+        return 'bold';
+      default:
+        return 'bolder';
+    }
+  }};
 `;

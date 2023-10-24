@@ -4,9 +4,15 @@ import { App } from 'components/App';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'components/GlobalStyle';
 
+const theme = {
+  colors: {
+    error: 'red',
+  },
+};
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ThemeProvider theme={{}}>
+    <ThemeProvider theme={theme}>
       <App />
       <GlobalStyle />
     </ThemeProvider>
