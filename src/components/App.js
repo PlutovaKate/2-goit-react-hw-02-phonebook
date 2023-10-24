@@ -54,7 +54,10 @@ export class App extends Component {
           filter={this.state.filter}
           onChangeFilter={this.changeFilter}
         />
-        <ContactList contacts={visibleContact} onDelete={this.deleteContact} />
+        <ContactList
+          contacts={visibleContact}
+          deleteContact={this.deleteContact}
+        />
       </Container>
     );
   }

@@ -8,17 +8,16 @@ import {
 
 import { HiTrash, HiOutlinePhoneOutgoing } from 'react-icons/hi';
 
-const ContactItem = ({ name, id, number, onDelete }) => {
+const ContactItem = ({ name, id, number, deleteContact }) => {
   return (
     <ListItem id={id}>
       <ContactInform>
         <HiOutlinePhoneOutgoing />
         <Info type="name">{name}:</Info>
-
         <Info type="number">{number}</Info>
       </ContactInform>
       <BtnWrapper>
-        <ContactBtn type="button" onClick={() => onDelete(id)}>
+        <ContactBtn type="button" onClick={() => deleteContact(id)}>
           {/* Delete */}
           <HiTrash />
         </ContactBtn>
