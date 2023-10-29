@@ -44,7 +44,7 @@ const PhonebookForm = ({ onAdd }) => {
           <LabelForm>
             <HiOutlinePhone />
             <StyledField
-              type="number"
+              type="tel"
               name="number"
               placeholder="Type the NUMBER"
             />

@@ -9,6 +9,7 @@ export const ContactList = ({ contacts, deleteContact }) => {
         return (
           <ContactItem
             key={id}
+            id={id}
             name={name}
             number={number}
             deleteContact={deleteContact}
